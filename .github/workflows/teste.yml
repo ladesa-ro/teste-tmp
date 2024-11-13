@@ -1,3 +1,5 @@
+name: Teste - Deploy
+
 on:
   workflow_dispatch:
 
@@ -7,3 +9,6 @@ jobs:
     steps:
       - name: Hello, world
         run: echo hello world!
+
+      - name: get nodes
+        run: kubectl get nodes
