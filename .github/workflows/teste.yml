@@ -22,3 +22,8 @@ jobs:
 
       - name: Listar arquivos da pasta atual
         run: ls -la .
+
+      - name: deploy dos resources
+        working-directory: ./.github/deploy
+        run: |
+          kubectl apply -f resources.yml
