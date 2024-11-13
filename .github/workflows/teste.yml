@@ -2,11 +2,17 @@ name: Teste - Deploy
 
 on:
   workflow_dispatch:
+  push:
+    branches: 
+      - main
 
 jobs:
   deploy:
+    name: Deploy to Cluster
     runs-on: deploy
     steps:
+      - uses: actions/checkout@v4
+      
       - name: Hello, world
         run: echo hello world!
 
