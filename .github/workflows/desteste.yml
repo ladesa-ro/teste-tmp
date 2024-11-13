@@ -1,10 +1,7 @@
-name: Teste - Deploy
+name: Desteste - Deploy
 
 on:
   workflow_dispatch:
-  push:
-    branches: 
-      - main
 
 jobs:
   deploy:
@@ -17,4 +14,4 @@ jobs:
       - name: deploy dos resources
         working-directory: ./.github/deploy
         run: |
-          kubectl apply -f resources.yml
+          kubectl delete -f resources.yml
