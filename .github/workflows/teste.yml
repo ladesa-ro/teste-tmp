@@ -2,19 +2,15 @@ name: Teste - Deploy
 
 on:
   workflow_dispatch:
-  push:
-    branches: 
-      - main
 
 jobs:
   deploy:
     name: Deploy to Cluster
     runs-on: deploy
     steps:
-      - name: Clonar arquivos do repositório
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: deploy dos resources
+      - name: deploy resources to kubernetes cluster
         working-directory: ./.github/deploy
         run: |
           kubectl apply -f resources.yml
