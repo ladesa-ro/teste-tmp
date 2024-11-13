@@ -11,10 +11,14 @@ jobs:
     name: Deploy to Cluster
     runs-on: deploy
     steps:
-      - uses: actions/checkout@v4
+      - name: Clonar arquivos do repositório
+        uses: actions/checkout@v4
       
       - name: Hello, world
         run: echo hello world!
 
-      - name: get nodes
+      - name: Obter nós do cluster kubernetes
         run: kubectl get nodes
+
+      - name: Listar arquivos da pasta atual
+        run: ls -la .
